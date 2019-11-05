@@ -10,7 +10,9 @@ setopt auto_menu    # On two TABS cycle through the menu of options
 
 # Aliases
 alias lsa='ls -a'
-alias zshrc='vim $ZDOTDIR/.zshrc'
-alias szshrc='source $ZDOTDIR/.zshrc'
-alias zshenv='vim $ZDOTDIR/.zshenv'
-alias szshenv='source $ZDOTDIR/.zshenv'
+alias ezrc='vim $ZDOTDIR/.zshrc'
+alias szrc='source $ZDOTDIR/.zshrc'
+alias ezenv='vim $ZDOTDIR/.zshenv'
+alias szenv='source $ZDOTDIR/.zshenv'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
