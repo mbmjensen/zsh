@@ -68,6 +68,18 @@ alias -g L='| less'
 alias gc='git commit'
 alias gca='git commit --all'
 alias gcm='git commit --message'
+alias gp='git push'
+alias gs='git status'
+alias cl='clear'
+alias cls='clear && ls'
+alias cdd='cd ~/Drive'
+alias config='cd ~/Drive/Software/config/'
+alias rmf='rm -rf'
+alias bu='brew update && brew upgrade'
+alias bb='brew bundle'
+alias bd='brew doctor'
+alias bc='brew cleanup'
+alias mkdp='mkdir -p'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
