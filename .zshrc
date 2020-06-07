@@ -1,4 +1,4 @@
-#!/bin/env zsh
+#!/usr/bin/env zsh
 
 # Line Editor Settings
 bindkey -v
@@ -59,10 +59,10 @@ alias ll='ls -l'
 alias lla='ls -lA'
 alias ezrc='vim ${ZDOTDIR}/.zshrc'
 alias szrc='source ${ZDOTDIR}/.zshrc'
-alias ezenv='vim ${ZDOTDIR}/.zshenv'
-alias szenv='source ${ZDOTDIR}/.zshenv'
-alias ez='vim -o ${ZDOTDIR}/.zshrc ${ZDOTDIR}/.zshenv'
-alias sz='source ${ZDOTDIR}/.zshrc && source ${ZDOTDIR}/.zshenv'
+alias ezenv='vim ${ZDOTDIR}/zshenv'
+alias szenv='source ${ZDOTDIR}/zshenv'
+alias ez='vim -o ${ZDOTDIR}/.zshrc ${ZDOTDIR}/zshenv'
+alias sz='source ${ZDOTDIR}/zshenv && source ${ZDOTDIR}/.zshrc '
 alias so='set -o | grep'
 alias -g L='| less'
 alias gc='git commit'
@@ -82,5 +82,7 @@ alias bc='brew cleanup'
 alias mkdp='mkdir -p'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source ${ZDOTDIR}/zshrc_local.zsh
 
 source ${ZDOTDIR}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
