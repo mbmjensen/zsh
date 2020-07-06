@@ -11,9 +11,14 @@ export EDITOR="vim"
 export VISUAL="${EDITOR}"
 
 # Set up the file path for zsh
-fpath+=("$ZDOTDIR/pure")
+fpath+=(
+    "$ZDOTDIR/pure"
+    "$ZDOTDIR/zsh-completions/src"
+)
 export fpath
 
 # Set up the path variable
 path+=("/usr/local/sbin")
 export path
+
+source "${ZDOTDIR}/.zshenv_local"

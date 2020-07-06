@@ -43,31 +43,33 @@ setopt menu_complete
 autoload -Uz compinit && compinit
 
 # General Options
-setopt chase_links     # Follow sym links
+setopt chase_links  # Follow sym links
 setopt correct      # Try to resolve spelling errors of commands
-unsetopt beep      # Turn off beeps
+unsetopt beep       # Turn off beeps
 
 # Aliases
 alias ..='cd ..'
 alias ...='cd ...'
 alias ....='cd ....'
 alias .....='cd .....'
-alias ls='ls -G'
 alias ez='vim -o ${ZDOTDIR}/.zshrc ${ZDOTDIR}/zshenv'
 alias sz='source ${ZDOTDIR}/zshenv && source ${ZDOTDIR}/.zshrc '
 alias -g L='| less'
-alias gc='git commit'
-alias gca='git commit --all'
-alias gcm='git commit --message'
-alias gp='git push'
-alias gs='git status'
 alias cl='clear'
 alias cls='clear && ls'
 alias config='cd ~/.config && ls'
 alias rmf='rm -rf'
 
+## Git Configuration
+alias gc='git commit'
+alias gca='git commit --all'
+alias gcm='git commit --message'
+alias gp='git push'
+alias gs='git status'
+
+## ls Configuration
+alias ls='ls -G'
+
+source "${ZDOTDIR}/.zshrc_local"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-source ${ZDOTDIR}/zshrc_local.zsh
-
-source ${ZDOTDIR}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "${ZDOTDIR}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
