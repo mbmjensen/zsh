@@ -1,14 +1,27 @@
 #!/usr/bin/env zsh
 
-# Look for all other zsh files in ZDOTDIR
-export ZDOTDIR="${HOME}/.config/zsh/"
-
-# Import Locations
-export DRIVE="${HOME}/Drive/"
-
-# Set default editor to VIM
+# Zsh Configuration
+export ZDOTDIR="$HOME/.config/zsh/"
 export EDITOR="vim"
-export VISUAL="${EDITOR}"
+export VISUAL="$EDITOR"
+local_overrides="$ZDOTDIR/zshenv.local"
+
+# User Directories
+export DRIVE_DIR="$HOME/Drive"
+export LOGS_DIR="$HOME/Documents/Logs"
+
+# Development Directories
+export DEV_DIR="$HOME/DEVELOPMENT"
+export CONFIG_DIR="$HOME/.config"
+export USER_BIN_DIR="$DEV_DIR/bin"
+
+# Go Configuration
+export GOPATH="$DEV_DIR/go"
+export GOBIN="$GOPATH/bin"
+
+# FZF Settings
+export FZF_DEFAULT_COMMAND='fd --type file'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Set up the file path for zsh
 fpath+=(
@@ -18,7 +31,11 @@ fpath+=(
 export fpath
 
 # Set up the path variable
-path+=("/usr/local/sbin")
+path+=(
+    "/usr/local/sbin"
+    "$USER_BIN_DIR"
+    "$GOBIN"
+)
 export path
 
-source "${ZDOTDIR}/.zshenv_local"
+[[ -f "$local_overrides" ]] && source "$local_overrides"

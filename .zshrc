@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# Local Settings
+local_overrides=$ZDOTDIR/.zshrc.local
+
 # Line Editor Settings
 bindkey -v
 
@@ -7,11 +10,13 @@ bindkey -v
 autoload -U promptinit; promptinit
 prompt pure
 
-_set_cursor() {
+# Start Cursor Configuration
+set_cursor() {
     echo -ne '\e[5 q'       # Set the cursor to beam mode
 }
-precmd_functions+=(_set_cursor)
-zle-keymap-select () {
+precmd_functions+=(set_cursor)
+
+zle-keymap-select() {
     if [ "$TERM" = "xterm-256color" ]; then
         if [ $KEYMAP = vicmd ]; then
             # Set block cursor
@@ -27,9 +32,8 @@ zle-keymap-select () {
         prompt_pure_update_vim_prompt_widget
     fi
 }
-
-# Bind the callback
 zle -N zle-keymap-select
+# End Cursor Configuration
 
 # Reduce latency when pressing <Esc>
 export KEYTIMEOUT=1
@@ -70,6 +74,6 @@ alias gs='git status'
 ## ls Configuration
 alias ls='ls -G'
 
-source "${ZDOTDIR}/.zshrc_local"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source "${ZDOTDIR}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+[[ -f "$local_overrides" ]] && source "$local_overrides"
