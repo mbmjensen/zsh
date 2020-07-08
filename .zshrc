@@ -74,6 +74,14 @@ alias gs='git status'
 ## ls Configuration
 alias ls='ls -G'
 
+# Configure FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Enable Zsh Syntax Highlighting
 source "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+# Enable pyenv. This is needed for pyenv shims to work properly.
+eval "$(pyenv init -)"
+
+# Apply Local zshrc Settings
 [[ -f "$local_overrides" ]] && source "$local_overrides"
