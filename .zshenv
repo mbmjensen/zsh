@@ -11,7 +11,7 @@ export DRIVE_DIR="$HOME/Drive"
 export LOGS_DIR="$HOME/Documents/Logs"
 
 # Development Directories
-export DEV_DIR="$HOME/DEVELOPMENT"
+export DEV_DIR="$HOME/Development"
 export CONFIG_DIR="$HOME/.config"
 export USER_BIN_DIR="$DEV_DIR/bin"
 
