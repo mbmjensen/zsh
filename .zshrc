@@ -68,7 +68,9 @@ alias rmf='rm -rf'
 alias gc='git commit'
 alias gca='git commit --all'
 alias gcm='git commit --message'
-alias gp='git push'
+alias gl='git log --pretty=oneline'
+alias gp='git pull'
+alias gpu='git push'
 alias gs='git status'
 
 ## ls Configuration
