@@ -14,6 +14,7 @@ export LOGS_DIR="$HOME/Documents/Logs"
 export DEV_DIR="$HOME/Development"
 export CONFIG_DIR="$HOME/.config"
 export USER_BIN_DIR="$DEV_DIR/bin"
+export LOCAL_USER_BIN_DIR="${USER_BIN_DIR}/local"
 
 # Go Configuration
 export GOPATH="$DEV_DIR/go"
@@ -34,6 +35,7 @@ export fpath
 path+=(
     "/usr/local/sbin"
     "$USER_BIN_DIR"
+    "$LOCAL_USER_BIN_DIR"
     "$GOBIN"
 )
 export path
