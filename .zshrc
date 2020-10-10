@@ -3,40 +3,25 @@
 # Local Settings
 local_overrides=$ZDOTDIR/.zshrc.local
 
-# Line Editor Settings
-bindkey -v
-
 # Prompt Settings
 autoload -U promptinit; promptinit
 prompt pure
 
-# Start Cursor Configuration
+# Cursor Configuration
 set_cursor() {
     echo -ne '\e[5 q'       # Set the cursor to beam mode
 }
 precmd_functions+=(set_cursor)
 
-zle-keymap-select() {
-    if [ "$TERM" = "xterm-256color" ]; then
-        if [ $KEYMAP = vicmd ]; then
-            # Set block cursor
-            echo -ne '\e[1 q'
-        else
-            # Set beam cursor
-            echo -ne '\e[5 q'
-        fi
-    fi
-
-    if typeset -f prompt_pure_update_vim_prompt_widget > /dev/null; then
-        # Refresh prompt and call Pure super function
-        prompt_pure_update_vim_prompt_widget
-    fi
-}
-zle -N zle-keymap-select
-# End Cursor Configuration
-
 # Reduce latency when pressing <Esc>
 export KEYTIMEOUT=1
+
+# Use emacs style commands inline. On escape, edit the current command in
+# $EDITOR
+bindkey -e
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^k' edit-command-line
 
 # Completion Settings
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
@@ -78,6 +63,7 @@ alias ls='ls -G'
 
 # Configure FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias cdf='cd $(fd --type directory d --hidden --exclude .git | fzf)'
 
 # Enable Zsh Syntax Highlighting
 source "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
@@ -87,3 +73,28 @@ eval "$(pyenv init -)"
 
 # Apply Local zshrc Settings
 [[ -f "$local_overrides" ]] && source "$local_overrides"
+
+# Chrome Utilities
+
+## Search chrome history with fzf
+ch() {
+  local cols sep
+  cols=$(( COLUMNS / 3 ))
+  sep='{::}'
+
+  cp -f ~/Library/Application\ Support/Google/Chrome/Default/History /tmp/h
+
+  sqlite3 -separator $sep /tmp/h \
+    "select substr(title, 1, $cols), url
+     from urls order by last_visit_time desc" |
+  awk -F $sep '{printf "%-'$cols's  \x1b[36m%s\x1b[m\n", $1, $2}' |
+  fzf --ansi --multi | sed 's#.*\(https*://\)#\1#' | xargs open
+}
+
+## Open Chrome Windows
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --incognito'
+
+# Open Gmail
+gmail() {
+    open https://www.gmail.com
+}
