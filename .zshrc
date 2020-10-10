@@ -91,10 +91,10 @@ ch() {
   fzf --ansi --multi | sed 's#.*\(https*://\)#\1#' | xargs open
 }
 
-## Open Chrome Windows
-alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --incognito'
+# Quick-launch applications
 
-# Open Gmail
-gmail() {
-    open https://www.gmail.com
-}
+alias g="open 'https://gmail.com'"
+alias y="open 'https://youtube.com'"
+alias s="open -a spotify"
+alias i="open -a safari"
+alias c="open -a 'Google Chrome'"
