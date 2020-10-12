@@ -2,3 +2,4 @@
 .zcompdump
 .zshrc.local
 .zshenv.local
+*.swp
