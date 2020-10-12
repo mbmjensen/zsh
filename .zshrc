@@ -21,7 +21,7 @@ export KEYTIMEOUT=1
 bindkey -e
 autoload -U edit-command-line
 zle -N edit-command-line
-bindkey '^k' edit-command-line
+bindkey '^ ' edit-command-line
 
 # Completion Settings
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
