@@ -65,7 +65,7 @@ alias ls='ls -G'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ### FZF uses fd and respects .gitignore by default
-FZF_DEFAULT_COMMAND='fd --type f --type d --hidden --follow --exclude .git'
+export FZF_DEFAULT_COMMAND='fd --type f --type d --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 alias cdf='cd $(fd --type directory d --hidden --exclude .git | fzf)'
