@@ -20,10 +20,6 @@ export LOCAL_USER_BIN_DIR="${USER_BIN_DIR}/local"
 export GOPATH="$DEV_DIR/go"
 export GOBIN="$GOPATH/bin"
 
-# FZF Settings
-export FZF_DEFAULT_COMMAND='fd --type file'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
 # Set up the file path for zsh
 fpath+=(
     "$ZDOTDIR/pure"
