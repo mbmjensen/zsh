@@ -1,18 +1,19 @@
 #!/usr/bin/env zsh
 
 # Zsh Configuration
-export ZDOTDIR="$HOME/.config/zsh/"
+export ZDOTDIR="$HOME/.config/zsh"
 export EDITOR="vim"
 export VISUAL="$EDITOR"
 local_overrides="$ZDOTDIR/zshenv.local"
 
 # User Directories
 export DRIVE_DIR="$HOME/Drive"
-export LOGS_DIR="$HOME/Documents/Logs"
 
 # Development Directories
 export DEV_DIR="$HOME/Development"
+export LOGS_DIR="$DEV_DIR/Logs"
 export CONFIG_DIR="$HOME/.config"
+export XDG_CONFIG_HOME="$CONFIG_DIR"
 export USER_BIN_DIR="$DEV_DIR/bin"
 export LOCAL_USER_BIN_DIR="${USER_BIN_DIR}/local"
 
@@ -29,7 +30,6 @@ export fpath
 
 # Set up the path variable
 path+=(
-    "/usr/local/sbin"
     "$USER_BIN_DIR"
     "$LOCAL_USER_BIN_DIR"
     "$GOBIN"
