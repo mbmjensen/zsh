@@ -1,5 +1,5 @@
 .zsh_history
 .zcompdump
-.zshrc.local
-.zshenv.local
+*.local.zsh
+zshenv.local.zsh
 *.swp

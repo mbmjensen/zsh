@@ -4,7 +4,7 @@
 export ZDOTDIR="$HOME/.config/zsh"
 export EDITOR="vim"
 export VISUAL="$EDITOR"
-local_overrides="$ZDOTDIR/zshenv.local"
+export HISTFILE="$ZDOTDIR"
 
 # User Directories
 export DRIVE_DIR="$HOME/Drive"
@@ -36,4 +36,5 @@ path+=(
 )
 export path
 
-[[ -f "$local_overrides" ]] && source "$local_overrides"
+local_overrides="$ZDOTDIR/zshenv.local.zsh"
+[[ -f "$local_overrides" ]] && source "$local_overrides" || true
