@@ -1,5 +1,3 @@
-### fzf
-
 # Use fd and respect .gitignore by default
 export FZF_DEFAULT_COMMAND='fd --type f --type d --hidden --follow --exclude .git'
 
@@ -18,12 +16,3 @@ fi
 source "/usr/local/Cellar/fzf/0.23.0/shell/key-bindings.zsh"
 [[ -f $XDG_CONFIG_HOME/fzf/fzf.zsh ]] && source $XDG_CONFIG_HOME/fzf/fzf.zsh
 
-### pyenv
-
-# This is needed for pyenv shims to work properly.
-eval "$(pyenv init -)"
-
-### zsh-completions
-
-# Possibly necessary according to the plugin README
-rm -f ~/.zcompdump; compinit

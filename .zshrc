@@ -7,7 +7,8 @@ sections=(
     "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
     "$ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
     "$ZDOTDIR/aliases.zsh"
-    "$ZDOTDIR/app_configs.zsh"
+    "$ZDOTDIR/fzf.zsh"
+    "$ZDOTDIR/pyenv.zsh"
 )
 
 # Time zsh file load time

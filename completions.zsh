@@ -10,3 +10,6 @@ setopt correct      # Try to resolve spelling errors of commands
 unsetopt beep       # Turn off beeps
 
 autoload -Uz compinit && compinit
+
+# Possibly necessary according to the zsh-completions README
+rm -f ~/.zcompdump; compinit
