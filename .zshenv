@@ -10,10 +10,10 @@ export HISTFILE="$ZDOTDIR"
 export DRIVE_DIR="$HOME/Drive"
 
 # Development Directories
-export DEV_DIR="$HOME/Development"
-export LOGS_DIR="$DEV_DIR/Logs"
 export CONFIG_DIR="$HOME/.config"
 export XDG_CONFIG_HOME="$CONFIG_DIR"
+export DEV_DIR="$HOME/Development"
+export LOGS_DIR="$DEV_DIR/Logs"
 export USER_BIN_DIR="$DEV_DIR/bin"
 export LOCAL_USER_BIN_DIR="${USER_BIN_DIR}/local"
 
