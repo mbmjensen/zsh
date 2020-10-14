@@ -25,6 +25,7 @@ export GOBIN="$GOPATH/bin"
 # http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html
 typeset -U FPATH fpath
 fpath+=(
+    "$ZDOTDIR/functions"
     "$ZDOTDIR/pure"
     "$ZDOTDIR/zsh-completions/src"
 )

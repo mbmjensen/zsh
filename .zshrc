@@ -9,6 +9,7 @@ sections=(
     "$ZDOTDIR/aliases.zsh"
     "$ZDOTDIR/fzf.zsh"
     "$ZDOTDIR/pyenv.zsh"
+    "$ZDOTDIR/functions.zsh"
 )
 
 # Time zsh file load time
