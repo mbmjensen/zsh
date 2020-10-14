@@ -1,15 +1,26 @@
+# Expand the last alias on space by default; to avoid expanding, use Ctrl-Space.
+function expand_alias_space() {
+    zle _expand_alias
+    zle magic-space
+}
+zle -N expand_alias_space
+bindkey -M main ' ' expand_alias_space
+bindkey -M main '^ ' magic-space
+
+# Expand aliases on space by default. To avoid expanding, use Ctrl-Space.
+# Expand the last alias on return by default; to avoid expanding, use Ctrl-Return.
+function expand_alias_return() {
+    zle _expand_alias
+    zle accept-line
+}
+zle -N expand_alias_return
+bindkey -M main '^M' expand_alias_return
+bindkey -M main '^[[29~' accept-line
+
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
 zstyle ':completion:*' menu select
 export ZSH_COMPLETION_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43:ma=44;37'
 zstyle ':completion:*' list-colors ${ZSH_COMPLETION_COLORS}
 setopt menu_complete
 
-# General Options
-setopt chase_links  # Follow sym links
-setopt correct      # Try to resolve spelling errors of commands
-unsetopt beep       # Turn off beeps
-
 autoload -Uz compinit && compinit
-
-# Possibly necessary according to the zsh-completions README
-rm -f ~/.zcompdump; compinit
