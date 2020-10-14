@@ -21,14 +21,18 @@ export LOCAL_USER_BIN_DIR="${USER_BIN_DIR}/local"
 export GOPATH="$DEV_DIR/go"
 export GOBIN="$GOPATH/bin"
 
-# Set up the file path for zsh
+# Keep only the first occurence of each duplicated value to the fpath
+# http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html
+typeset -U FPATH fpath
 fpath+=(
     "$ZDOTDIR/pure"
     "$ZDOTDIR/zsh-completions/src"
 )
 export fpath
 
-# Set up the path variable
+# Keep only the first occurence of each duplicated value to the path
+# http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html
+typeset -U PATH path
 path+=(
     "$USER_BIN_DIR"
     "$LOCAL_USER_BIN_DIR"
