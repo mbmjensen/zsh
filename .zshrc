@@ -26,8 +26,8 @@ execution_time () {
 for section in ${sections}; do
     [[ $section ]] && source $section
 
-    # Apply local overrides, if it exists. The local override should not be
-    # stored tracked on github.
+    # Apply local overrides, if it exists. The local override will not be
+    # tracked on github.
     override_section="${section:s/.zsh/.local.zsh/}"
     [[ -f $override_section ]] && source $override_section
 done
