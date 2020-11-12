@@ -1,0 +1,2 @@
+# [C]hange [D]irectory [D]irstack
+cd $(dirs -p | fzf --reverse | sed "s ^~ $HOME ")
