@@ -37,8 +37,5 @@ alias gp='git pull'
 alias gpu='git push'
 alias gs='git status'
 
-### ls
-#alias ls='ls -G'
-
 ### Googler
 alias g="googler -n 5"
