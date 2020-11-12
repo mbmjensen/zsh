@@ -4,10 +4,12 @@ sections=(
     "$ZDOTDIR/options.zsh"
     "$ZDOTDIR/completions.zsh"
     "$ZDOTDIR/prompt.zsh"
+    "$ZDOTDIR/fzf.zsh"
+    "$ZDOTDIR/fzf-tab.zsh"
+    "$ZDOTDIR/fzf-tab/fzf-tab.plugin.zsh"
     "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
     "$ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
     "$ZDOTDIR/aliases.zsh"
-    "$ZDOTDIR/fzf.zsh"
     "$ZDOTDIR/pyenv.zsh"
     "$ZDOTDIR/functions.zsh"
 )
