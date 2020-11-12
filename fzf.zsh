@@ -14,6 +14,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # Use CTRL-N to complete files
 my_fzf_file_widget() {
     LBUFFER=${LBUFFER}$(fd --type f --hidden --follow --exclude .git | fzf \
+        --height 40% \
+        --layout=reverse \
         --bind 'ctrl-r:reload(fd . / --type f --hidden --follow --exclude .git)' \
         --bind 'ctrl-h:reload(fd . $HOME --type f --hidden --follow --exclude .git)')
     local result=$?
@@ -29,6 +31,8 @@ bindkey '^n' my_fzf_file_widget
 # Use CTRL-P to complete files
 my_fzf_dir_widget() {
     LBUFFER=${LBUFFER}$(fd --type d --hidden --follow --exclude .git | fzf \
+        --height 40% \
+        --layout=reverse \
         --bind 'ctrl-r:reload(fd . / --type d --hidden --follow --exclude .git)' \
         --bind 'ctrl-h:reload(fd . $HOME --type d --hidden --follow --exclude .git)')
     local result=$?
