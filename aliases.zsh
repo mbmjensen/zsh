@@ -1,13 +1,17 @@
 # Quick-launch applications
-alias g="open 'https://gmail.com'"
+alias e="open 'https://gmail.com'"
 alias y="open 'https://youtube.com'"
 alias s="open -a spotify"
 alias i="open -a safari"
 alias c="open -a 'Google Chrome'"
 alias l="open -a reminders"
 
+# Binary Script Shortcuts
+alias oz='fuzzy-open-zsh-files'
+alias ob='fuzzy-open-binary-files'
+
 # Global
-alias -g L='| less'
+alias -g L='| less -R'
 
 # Navigation
 alias ..='cd ..'
@@ -33,5 +37,8 @@ alias gp='git pull'
 alias gpu='git push'
 alias gs='git status'
 
-## ls
-alias ls='ls -G'
+### ls
+#alias ls='ls -G'
+
+### Googler
+alias g="googler -n 5"
