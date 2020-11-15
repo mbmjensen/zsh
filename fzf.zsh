@@ -11,9 +11,25 @@ export FZF_DEFAULT_COMMAND='fd --type d --type f --hidden --exclude .git'
 # Use the same default command for Ctrl-T
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+# Get the word under the cursor
+get-word-under-cursor() {
+    local buffer=$1
+
+    local i=0
+    local beginword=0
+    local words=("${(z)BUFFER}")
+
+    while (( beginword <= CURSOR )); do
+        (( i++ ))
+        (( beginword += ${#words[$i]}+1 ))
+    done
+
+    echo "$words[$i]"
+}
 # Use CTRL-N to complete files
 my_fzf_file_widget() {
     LBUFFER=${LBUFFER}$(fd --type f --hidden --follow --exclude .git | fzf \
+        --query=$( get-word-under-cursor $BUFFER ) \
         --height 40% \
         --layout=reverse \
         --bind 'ctrl-r:reload(fd . / --type f --hidden --follow --exclude .git)' \
@@ -31,6 +47,7 @@ bindkey '^n' my_fzf_file_widget
 # Use CTRL-P to complete files
 my_fzf_dir_widget() {
     LBUFFER=${LBUFFER}$(fd --type d --hidden --follow --exclude .git | fzf \
+        --query=$( get-word-under-cursor $BUFFER ) \
         --height 40% \
         --layout=reverse \
         --bind 'ctrl-r:reload(fd . / --type d --hidden --follow --exclude .git)' \
