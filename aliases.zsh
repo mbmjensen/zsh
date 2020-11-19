@@ -21,7 +21,10 @@ alias .....='cd .....'
 alias cl='clear'
 alias cls='clear && ls'
 alias config='cd ~/.config && ls'
+
+# Directory
 alias rmf='rm -rf'
+alias mkdirp='mkdir -p'
 
 # Misc
 alias ez='vim -o ${ZDOTDIR}/.zshrc ${ZDOTDIR}/.zshenv'
