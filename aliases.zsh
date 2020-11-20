@@ -32,9 +32,11 @@ alias sz='source ${ZDOTDIR}/.zshenv && source ${ZDOTDIR}/.zshrc'
 
 # Application-Specific
 ### Git
+alias gb='git branch'
 alias gc='git commit'
 alias gca='git commit --all'
 alias gcm='git commit --message'
+alias gd='git diff'
 alias gl='git log --pretty=oneline'
 alias gp='git pull'
 alias gpu='git push'
