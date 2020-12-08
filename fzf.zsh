@@ -68,7 +68,7 @@ if [[ ! "$PATH" == */usr/local/Cellar/fzf/0.23.1/bin* ]]; then
 fi
 
 # Initialize auto-completion
-[[ $- == *i* ]] && source "/usr/local/Cellar/fzf/0.23.1/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "$DEV_DIR/fzf/shell/completion.zsh" 2> /dev/null
 
 # Initialize key bindings
-source "/usr/local/Cellar/fzf/0.23.1/shell/key-bindings.zsh"
+source "$DEV_DIR/fzf/shell/key-bindings.zsh"
