@@ -7,8 +7,11 @@ alias c="open -a 'Google Chrome'"
 alias l="open -a reminders"
 
 # Binary Script Shortcuts
+alias ce='create-executable-script'
+alias ob='fuzzy-open-bin-files'
+alias ov='fuzzy-open-vim-files'
 alias oz='fuzzy-open-zsh-files'
-alias ob='fuzzy-open-binary-files'
+alias efd='edit-fd-ignore'
 
 # Global
 alias -g L='| less -R'
