@@ -26,14 +26,14 @@ get-word-under-cursor() {
 
     echo "$words[$i]"
 }
-# Use CTRL-N to complete files
+# Use CTRL-X Ctrl-F to complete files
 my_fzf_file_widget() {
     LBUFFER=${LBUFFER}$(fd --type f --hidden --follow --exclude .git | fzf \
         --query=$( get-word-under-cursor $BUFFER ) \
         --height 40% \
         --layout=reverse \
-        --bind 'ctrl-r:reload(fd . / --type f --hidden --follow --exclude .git)' \
-        --bind 'ctrl-h:reload(fd . $HOME --type f --hidden --follow --exclude .git)')
+        --bind 'ctrl-j:reload(fd . / --type f --hidden --follow --exclude .git)' \
+        --bind 'ctrl-k:reload(fd . $HOME --type f --hidden --follow --exclude .git)')
     local result=$?
     if [[ $result == 0 ]]; then
         zle magic-space
@@ -42,16 +42,16 @@ my_fzf_file_widget() {
     return $result
 }
 zle -N my_fzf_file_widget
-bindkey '^n' my_fzf_file_widget
+bindkey '^x^f' my_fzf_file_widget
 
-# Use CTRL-P to complete files
+# Use CTRL-X Ctrl-D to complete directories
 my_fzf_dir_widget() {
     LBUFFER=${LBUFFER}$(fd --type d --hidden --follow --exclude .git | fzf \
         --query=$( get-word-under-cursor $BUFFER ) \
         --height 40% \
         --layout=reverse \
-        --bind 'ctrl-r:reload(fd . / --type d --hidden --follow --exclude .git)' \
-        --bind 'ctrl-h:reload(fd . $HOME --type d --hidden --follow --exclude .git)')
+        --bind 'ctrl-j:reload(fd . / --type d --hidden --follow --exclude .git)' \
+        --bind 'ctrl-k:reload(fd . $HOME --type d --hidden --follow --exclude .git)')
     local result=$?
     if [[ $result == 0 ]]; then
         zle magic-space
@@ -60,7 +60,7 @@ my_fzf_dir_widget() {
     return $result
 }
 zle -N my_fzf_dir_widget
-bindkey '^p' my_fzf_dir_widget
+bindkey '^x^d' my_fzf_dir_widget
 
 # Setup
 if [[ ! "$PATH" == */usr/local/Cellar/fzf/0.23.1/bin* ]]; then
