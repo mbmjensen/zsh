@@ -43,6 +43,7 @@ alias gd='git diff'
 alias gl='git log --pretty=oneline'
 alias gp='git pull'
 alias gpu='git push'
+alias gr='cd $(git rev-parse --show-toplevel)'
 alias gs='git status'
 
 ### Googler
