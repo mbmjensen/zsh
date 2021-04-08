@@ -14,7 +14,12 @@ alias oz='fuzzy-open-zsh-files'
 alias efd='edit-fd-ignore'
 
 # Global
+alias -g G='| grep'
+alias -g H='| head'
 alias -g L='| less -R'
+alias -g N='/dev/null'
+alias -g S='| sort'
+alias -g T='| tail'
 
 # Navigation
 alias ..='cd ..'
@@ -33,8 +38,7 @@ alias mkdirp='mkdir -p'
 alias ez='vim -o ${ZDOTDIR}/.zshrc ${ZDOTDIR}/.zshenv'
 alias sz='source ${ZDOTDIR}/.zshenv && source ${ZDOTDIR}/.zshrc'
 
-# Application-Specific
-### Git
+# Git
 alias gb='git branch'
 alias gc='git commit'
 alias gca='git commit --all'
@@ -45,6 +49,15 @@ alias gp='git pull'
 alias gpu='git push'
 alias gr='cd $(git rev-parse --show-toplevel)'
 alias gs='git status'
+alias -g H1='HEAD~1'
+alias -g H2='HEAD~2'
+alias -g H3='HEAD~3'
+alias -g H4='HEAD~4'
+alias -g H5='HEAD~5'
+alias -g H6='HEAD~6'
+alias -g H7='HEAD~7'
+alias -g H8='HEAD~8'
+alias -g H9='HEAD~9'
 
 ### Googler
 alias g="googler -n 5"
