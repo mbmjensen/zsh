@@ -40,6 +40,3 @@ path+=(
     "$GOBIN"
 )
 export path
-
-local_overrides="$ZDOTDIR/zshenv.local.zsh"
-[[ -f "$local_overrides" ]] && source "$local_overrides" || true
