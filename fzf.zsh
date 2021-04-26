@@ -1,7 +1,7 @@
 # Fix the colors that fzf uses to match colorscheme
 fzf_colors='
-  --color=fg:#9c9c9b,bg:#eeeeed,hl:#d75e00
-  --color=fg+:#4c4c4b,gutter:#eeeeed,bg+:#e4e4e4,hl+:#d75e00
+  --color=fg:#9c9c9b,bg:-1,hl:#d75e00
+  --color=fg+:#4c4c4b,gutter:-1,bg+:-1,hl+:#d75e00
   --color=info:#9c9c9b,prompt:#8959a8,pointer:#d6225e
   --color=marker:#4271ad,spinner:#4271ad,header:#4271ad'
 
