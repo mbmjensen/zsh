@@ -1,11 +1,10 @@
-# Expand the last alias on space by default; to avoid expanding, use Ctrl-Space.
+# Expand the last alias on space by default; to avoid expanding.
 function expand_alias_space() {
     zle _expand_alias
     zle magic-space
 }
 zle -N expand_alias_space
 bindkey -M main ' ' expand_alias_space
-bindkey -M main '^ ' magic-space
 
 # Expand aliases on space by default. To avoid expanding, use Ctrl-Space.
 # Expand the last alias on return by default; to avoid expanding, use Ctrl-Return.

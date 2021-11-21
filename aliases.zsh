@@ -62,5 +62,12 @@ alias -g H7='HEAD~7'
 alias -g H8='HEAD~8'
 alias -g H9='HEAD~9'
 
-### Googler
+# Tmux
+alias t='tmux'
+alias ta='tmux attach'
+alias tns='tmux new-session -s'
+alias tks='tmux kill-session -t $(tmux list-sessions -F "#{session_name}" | fzf)'
+alias tka='tmux kill-server'
+
+# Googler
 alias g="googler -n 5"
