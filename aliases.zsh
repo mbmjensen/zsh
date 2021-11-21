@@ -17,9 +17,12 @@ alias efd='edit-fd-ignore'
 alias -g G='| grep'
 alias -g H='| head'
 alias -g L='| less -R'
-alias -g N='/dev/null'
+alias -g N='> /dev/null'
 alias -g S='| sort'
 alias -g T='| tail'
+alias -g U='| gunzip'
+alias -g V='| vim -'
+alias -g Y='| tee'
 
 # Navigation
 alias ..='cd ..'
