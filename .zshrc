@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 sections=(
+    "$ZDOTDIR/cleanup.zsh"
     "$ZDOTDIR/options.zsh"
     "$ZDOTDIR/completions.zsh"
     "$ZDOTDIR/prompt.zsh"
