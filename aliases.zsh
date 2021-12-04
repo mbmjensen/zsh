@@ -14,15 +14,19 @@ alias oz='fuzzy-open-zsh-files'
 alias efd='edit-fd-ignore'
 
 # Global
+alias -g A='| awk'
+alias -g E='| sed'
 alias -g G='| grep'
 alias -g H='| head'
 alias -g L='| less -R'
 alias -g N='> /dev/null'
+alias -g R='| tr'
 alias -g S='| sort'
 alias -g T='| tail'
 alias -g U='| gunzip'
 alias -g V='| vim -'
 alias -g Y='| tee'
+alias -g Z='| gzip'
 
 # Navigation
 alias ..='cd ..'
