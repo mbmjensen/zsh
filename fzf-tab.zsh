@@ -1,1 +1,1 @@
-zstyle ':fzf-tab:*' default-color $'\033[30m'
+zstyle ':fzf-tab:*' default-color $'\033[0m'
