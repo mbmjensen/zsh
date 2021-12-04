@@ -4,6 +4,8 @@ My personal zsh settings and configurations.
 
 ## Installation
 
-1. Run the installation script
+Run the following script to setup zsh properly
 
-    ```./bin/install```
+```zsh
+./bin/install
+```

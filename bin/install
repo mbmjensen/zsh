@@ -1,9 +1,4 @@
 #!/usr/bin/env zsh
 
-local zsh_bin_directory=$ZDOTDIR/bin
-local user_bin_dir="${USER_BIN_DIR:-${HOME}/Development/bin}"
 
-for f in $(find $zsh_bin_directory ! -name "install" -type f); do
-    rm -f $f
-    ln -s $f $user_bin_dir || echo "failed to symlink $f to user bin directory"
-done
+ln -fs ${ZDOTDIR}/.zshenv ${HOME}/.zshenv
