@@ -65,8 +65,9 @@ alias -g H9='HEAD~9'
 # Tmux
 alias t='tmux'
 alias ta='tmux attach'
+alias tas='tmux attach -t $(tmux list-sessions -F "#{session_name}" | fzf --reverse)'
 alias tns='tmux new-session -s'
-alias tks='tmux kill-session -t $(tmux list-sessions -F "#{session_name}" | fzf)'
+alias tks='tmux kill-session -t $(tmux list-sessions -F "#{session_name}" | fzf --reverse)'
 alias tka='tmux kill-server'
 
 # Googler
