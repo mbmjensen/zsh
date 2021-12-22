@@ -74,5 +74,8 @@ alias tns='tmux new-session -s'
 alias tks='tmux kill-session -t $(tmux list-sessions -F "#{session_name}" | fzf --reverse)'
 alias tka='tmux kill-server'
 
+# Homebrew
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+
 # Googler
 alias g="googler -n 5"
