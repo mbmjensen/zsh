@@ -14,7 +14,6 @@ sections=(
     # Initialize plugins
     "$ZDOTDIR/fzf-tab/fzf-tab.plugin.zsh"
     "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-    "$ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
     "$ZDOTDIR/aliases.zsh"
     "$ZDOTDIR/functions.zsh"
