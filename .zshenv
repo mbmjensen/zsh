@@ -6,9 +6,6 @@ export EDITOR="vim"
 export VISUAL="$EDITOR"
 export HISTFILE="$ZDOTDIR"
 
-# User Directories
-export DRIVE_DIR="$HOME/Drive"
-
 # Development Directories
 export XDG_CONFIG_HOME="$HOME/.config"
 export DEV_DIR="$HOME/Development"
