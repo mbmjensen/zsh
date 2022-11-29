@@ -10,7 +10,7 @@ export HISTFILE="$ZDOTDIR"
 export XDG_CONFIG_HOME="$HOME/.config"
 export DEV_DIR="$HOME/Development"
 export USER_BIN_DIR="$DEV_DIR/bin"
-export LOCAL_USER_BIN_DIR="${USER_BIN_DIR}/local"
+export LOCAL_USER_BIN_DIR="$USER_BIN_DIR/local"
 
 # Go Configuration
 export GOPATH="$DEV_DIR/go"
