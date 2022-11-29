@@ -16,6 +16,9 @@ export LOCAL_USER_BIN_DIR="$USER_BIN_DIR/local"
 export GOPATH="$DEV_DIR/go"
 export GOBIN="$GOPATH/bin"
 
+# Obsidian Configuration
+expore OBSIDIAN_HOME="$HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Vault"
+
 # Keep only the first occurence of each duplicated value to the fpath
 # http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html
 typeset -U FPATH fpath
