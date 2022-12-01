@@ -42,7 +42,6 @@ alias rmf='rm -rf'
 alias mkdirp='mkdir -p'
 
 # Misc
-alias ez='vim -o ${ZDOTDIR}/.zshrc ${ZDOTDIR}/.zshenv'
 alias sz='source ${ZDOTDIR}/.zshenv && source ${ZDOTDIR}/.zshrc'
 
 # Git
