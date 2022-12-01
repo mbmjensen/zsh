@@ -1,4 +1,4 @@
 #!/usr/bin/env zsh
 
 
-ln -fs ${ZDOTDIR}/.zshenv ${HOME}/.zshenv
+ln -fs .zshenv $HOME/.zshenv
