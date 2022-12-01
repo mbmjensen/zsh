@@ -75,6 +75,3 @@ alias tka='tmux kill-server'
 
 # Homebrew
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
-
-# Googler
-alias g="googler -n 5"
