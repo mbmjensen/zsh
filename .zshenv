@@ -17,7 +17,7 @@ export GOPATH="$DEV_DIR/go"
 export GOBIN="$GOPATH/bin"
 
 # Homebrew Configuration
-export HOMEBREW_BUNDLE_FILE="$HOME/.config/brew/personal/Brewfile"
+export HOMEBREW_BUNDLE_FILE="$XDG_CONFIG_HOME/brew/personal/Brewfile"
 
 # Obsidian Configuration
 export OBSIDIAN_HOME="$HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Vault"
