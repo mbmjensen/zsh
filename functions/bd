@@ -1,0 +1,36 @@
+# Author: Michael Jensen
+# Email: michaelbmjensen@gmail.com
+# Date: 12/03/2023
+#
+# [B]ack [D]irectory
+#
+# Fuzzy select a parent directory on the current path to cd to.
+select_parent_directory() {
+    local current_directory_path=$1
+
+    dirname $current_directory_path \
+    | sed 's./.\n.g' \
+    | grep -v '^$' \
+    | fzf --reverse --tac
+}
+
+get_prefix_containing_directory() {
+    local current_directory_path=$1
+    local target_directory=$2
+
+    while [[ $target_directory != $(basename $current_directory_path) ]]; do
+        current_directory_path=$(dirname $current_directory_path)
+    done
+
+    echo $current_directory_path
+}
+
+local current_directory=$(pwd)
+
+local target_directory=$(select_parent_directory $current_directory)
+[[ -z $target_directory ]] && return 1
+
+local path_to_directory=$(get_prefix_containing_directory $current_directory $target_directory)
+[[ -z $path_to_directory ]] && return 2
+
+cd $path_to_directory
